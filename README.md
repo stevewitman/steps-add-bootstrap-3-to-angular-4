@@ -1,28 +1,45 @@
-# StepsAngular4AddBootstrap3
+# Angular 4 - Steps to add Bootstrap 3 
+```
+npm install jquery bootstrap ngx-bootstrap --save
+```
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+Add this style to  "styles": ["styles.css"] in .angular-cli.json
+```
+"styles": [
+  "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+    "styles.css"
+],
+```
 
-## Development server
+Add these scripts to "scripts": [] in .angular-cli.json
+```
+"scripts": [
+    "../node_modules/jquery/dist/jquery.js",
+    "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+],
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+You'll need to restart the server since it does not watch for changes in .angular-cli.json
 
-## Code scaffolding
+```
+ng s
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+Import whatever ngx modules you want to use and add to the imports
+```
+import { ModalModule, CarouselModule } from 'ngx-bootstrap';
+...
 
-## Build
+@NgModule({
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+    imports: [
+        ModalModule.forRoot(),
+        CarouselModule.forRoot(),
+    ],
+ 
+})
+```
 
-## Running unit tests
+## [Bootstrap 3](getbootstrap.com)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## [ngx-bootstrap](http://valor-software.com/ngx-bootstrap/#/)
